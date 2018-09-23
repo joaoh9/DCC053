@@ -1,0 +1,139 @@
+package lexsyn;
+
+import java_cup.runtime.*;
+
+parser code {:
+	public static void main(String args[]) throws Exception {
+		System.out.println("----------------------");
+		parser myParser = new parser(new Yylex(System.in));
+		myParser.parse();
+		System.out.print("Program accepted.");
+	}
+:}
+
+terminal LCBRACK, RCBRACK, SEMI, LPAREN, RPAREN;
+terminal INTT, CHART, BOOLT, FLOATT;
+terminal ASSIGN;
+terminal WHILE, IF, ELSE;
+
+terminal INTN;
+terminal REALN;
+
+terminal ID;
+
+terminal LT, LE, GT, GE;
+terminal PLUS, MINUS, MUL, DIV;
+
+non terminal program, block, decls, decl, type, stmts, stmt, rel, expr, term;
+non terminal unary, factor;
+
+precedence left PLUS, MINUS, MUL, DIV, ELSE;
+
+program	::= block:b {:
+				System.out.println("\n----------------------");
+				String rules = new String("program -> block\n" + b);
+				System.out.print(rules);
+			:}
+	;
+block	::= LCBRACK decls:ds stmts:ss RCBRACK {:
+				RESULT = new String("block -> { decls stmts }\n" + ds + ss);
+			:}
+	;
+decls	::= decls:ds decl:d {:
+				RESULT = new String("decls -> decls decl\n" + ds + d);
+			:}
+	|		/* empty */ {:
+				RESULT = new String("decls -> \n\n");
+			:}
+	;
+decl 	::= type:t ID SEMI {:
+				RESULT = new String("decl -> type id;\n" + t);
+			:}
+	;
+type	::= INTT {:
+				RESULT = new String("type -> int\n\n");
+			:} 
+	|		CHART {:
+				RESULT = new String("type -> char\n\n");
+			:}
+	|		BOOLT {:
+				RESULT = new String("type -> bool\n\n");
+			:}
+	|		FLOATT {:
+				RESULT = new String("type -> float\n\n");
+			:}
+	;
+stmts	::= stmts:ss stmt:s {:
+				RESULT = new String("stmts -> stmts stmt\n" + ss + s);
+			:}
+	| 		/* empty */ {:
+				RESULT = new String("stmts -> \n\n");
+			:}
+	;
+stmt 	::= ID ASSIGN expr:e SEMI {:
+				RESULT = new String("stmt -> id = expr;\n" + e);
+			:}
+	| 		IF LPAREN rel:r RPAREN stmt:s {:
+				RESULT = new String("stmt -> if ( rel ) stmt\n" + r + s);
+			:}
+	| 		IF LPAREN rel:r RPAREN stmt:s1 ELSE stmt:s2 {:
+				RESULT = new String("stmt -> if ( rel ) stmt else stmt\n" +
+				r + s1 + s2);
+			:}
+	|		WHILE LPAREN rel:r RPAREN stmt:s {:
+				RESULT = new String("stmt -> while ( rel ) stmt\n" + r + s);
+			:}
+	|		block:b {:
+				RESULT = new String("stmt -> block\n" + b);
+			:}
+	;
+rel 	::= expr:e1 LT expr:e2 {:
+				RESULT = new String("rel -> expr < expr\n" + e1 + e2);
+			:}
+	| 		expr:e1 LE expr:e2 {:
+				RESULT = new String("rel -> expr <= expr\n" + e1 + e2);
+			:}
+	| 		expr:e1 GT expr:e2 {:
+				RESULT = new String("rel -> expr > expr\n" + e1 + e2);
+			:}
+	| 		expr:e1 GE expr:e2 {:
+				RESULT = new String("rel -> expr >= expr\n" + e1 + e2);
+			:}
+	|		expr:e {:
+				RESULT = new String("rel -> expr\n" + e);
+			:}
+	;
+expr 	::= expr:e PLUS term:t {:
+				RESULT = new String("expr -> expr + term\n" + e + t);
+			:}
+	| 		expr:e MINUS term:t {:
+				RESULT = new String("expr -> expr - term\n" + e + t);
+			:}
+	| 		term:t {:
+				RESULT = new String("expr -> term\n" + t);
+			:}
+	;
+term 	::= term:t MUL unary:u {:
+				RESULT = new String("term -> term * unary\n" + t + u);
+			:}
+ 	| 		term:t DIV unary:u {:
+				RESULT = new String("term -> term / unary\n" + t + u);
+			:}
+ 	| 		unary:u {:
+				RESULT = new String("term -> unary\n" + u);
+			:}
+ 	;
+unary 	::= MINUS unary:u {:
+				RESULT = new String("unary -> - unary\n" + u);
+			:}
+	| 		factor:f {:
+				RESULT = new String("unary -> factor\n" + f);
+			:} 
+	;
+factor 	::= INTN:n {:
+				RESULT = new String("factor -> num\n\n");
+			:}
+	| 		REALN:n {:
+				RESULT = new String("factor -> real\n\n");
+			:}
+	;
