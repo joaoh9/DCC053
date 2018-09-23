@@ -1,0 +1,5 @@
+----------------------
+{
+	int i; int j; int k; bool b;
+	i = 4 * 5-3instead expected token classes are [MINUS, MUL, DIV]
+Makefile:16: recipe for target 'execute' failed

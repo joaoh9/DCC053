@@ -1,0 +1,10 @@
+<lcbrack, >
+<type, "int"><id, "i"><semi, ><type, "int"><id, "j"><semi, ><type, "float"><id, "v"><semi, ><type, "float"><id, "x"><semi, >
+<while, ><lparen, ><num, 1><rparen, >
+<if, ><lparen, ><num, 1.0><rparen, ><id, "v"><assign, "="><num, 4.0><semi, >
+<else, ><lcbrack, >
+<id, "i"><assign, "="><num, 4><semi, >
+<id, "v"><assign, "="><num, 2.0><semi, >
+<id, "j"><assign, "="><num, 10><semi, >
+<rcbrack, >
+<rcbrack, >

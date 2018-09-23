@@ -1,0 +1,10 @@
+<lcbrack, >
+<type, "int"><id, "ab2c"><semi, >
+<type, "float"><id, "def091"><semi, >
+<id, "def091"><assign, "="><num, -.90><semi, >
+<id, "ab2c"><assign, "="><num, 90><binop, "*"><num, 90><semi, >
+
+<if, ><lparen, ><num, 90><relop, "<="><num, 2><rparen, ><lcbrack, >
+<id, "ab2c"><assign, "="><num, 89><binop, "-"><num, 2><semi, >
+<rcbrack, >
+<rcbrack, >

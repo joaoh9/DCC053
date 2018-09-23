@@ -1,0 +1,7 @@
+<lcbrack, >
+<type, "int"><id, "abc"><semi, >
+<if, ><lparen, ><num, 1><rparen, >
+<lcbrack, >
+<id, "abc"><assign, "="><num, 10><semi, >
+<rcbrack, >
+<rcbrack, >

@@ -1,0 +1,76 @@
+----------------------
+{
+	int ab2c;
+	float def091;
+	def091 = -.90;
+	ab2c = 90 * 90;
+
+	if (90 <= 2) {
+		ab2c = 89 - 2;
+	}
+}
+----------------------
+program -> block
+block -> { decls stmts }
+decls -> decls decl
+decls -> decls decl
+decls -> 
+
+decl -> type id;
+type -> int
+
+decl -> type id;
+type -> float
+
+stmts -> stmts stmt
+stmts -> stmts stmt
+stmts -> stmts stmt
+stmts -> 
+
+stmt -> id = expr;
+expr -> term
+term -> unary
+unary -> factor
+factor -> real
+
+stmt -> id = expr;
+expr -> term
+term -> term * unary
+term -> unary
+unary -> factor
+factor -> num
+
+unary -> factor
+factor -> num
+
+stmt -> if ( rel ) stmt
+rel -> expr <= expr
+expr -> term
+term -> unary
+unary -> factor
+factor -> num
+
+expr -> term
+term -> unary
+unary -> factor
+factor -> num
+
+stmt -> block
+block -> { decls stmts }
+decls -> 
+
+stmts -> stmts stmt
+stmts -> 
+
+stmt -> id = expr;
+expr -> expr - term
+expr -> term
+term -> unary
+unary -> factor
+factor -> num
+
+term -> unary
+unary -> factor
+factor -> num
+
+Program accepted.

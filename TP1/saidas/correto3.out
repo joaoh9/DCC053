@@ -1,0 +1,84 @@
+----------------------
+{
+	int i; int j; float v; float x;
+	while (1)
+		if (1.0) v = 4.0;
+		else {
+			i = 4;
+			v = 2.0;
+			j = 10;
+		}
+}
+
+----------------------
+program -> block
+block -> { decls stmts }
+decls -> decls decl
+decls -> decls decl
+decls -> decls decl
+decls -> decls decl
+decls -> 
+
+decl -> type id;
+type -> int
+
+decl -> type id;
+type -> int
+
+decl -> type id;
+type -> float
+
+decl -> type id;
+type -> float
+
+stmts -> stmts stmt
+stmts -> 
+
+stmt -> while ( rel ) stmt
+rel -> expr
+expr -> term
+term -> unary
+unary -> factor
+factor -> num
+
+stmt -> if ( rel ) stmt else stmt
+rel -> expr
+expr -> term
+term -> unary
+unary -> factor
+factor -> real
+
+stmt -> id = expr;
+expr -> term
+term -> unary
+unary -> factor
+factor -> real
+
+stmt -> block
+block -> { decls stmts }
+decls -> 
+
+stmts -> stmts stmt
+stmts -> stmts stmt
+stmts -> stmts stmt
+stmts -> 
+
+stmt -> id = expr;
+expr -> term
+term -> unary
+unary -> factor
+factor -> num
+
+stmt -> id = expr;
+expr -> term
+term -> unary
+unary -> factor
+factor -> real
+
+stmt -> id = expr;
+expr -> term
+term -> unary
+unary -> factor
+factor -> num
+
+Program accepted.

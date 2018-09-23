@@ -1,0 +1,13 @@
+<lcbrack, >
+<type, "int"><id, "weight"><semi, ><type, "int"><id, "group"><semi, ><type, "int"><id, "charge"><semi, ><type, "int"><id, "distance"><semi, >
+<id, "distance"><assign, "="><num, 2300><semi, >
+<id, "weight"><assign, "="><num, 4000><semi, >
+<if, ><lparen, ><num, 60><rparen, ><id, "group"><assign, "="><num, 5><semi, >
+<else, ><lcbrack, >
+<type, "int"><id, "test"><semi, >
+<id, "test"><assign, "="><num, 2000><semi, >
+<id, "group"><assign, "="><num, 1500><binop, "/"><num, 15><semi, >
+<id, "charge"><assign, "="><num, 40><binop, "+"><num, 3><binop, "*"><num, 2300><binop, "/"><num, 1000><semi, >
+<id, "test"><assign, "="><num, 1><semi, >
+<rcbrack, >
+<rcbrack, >

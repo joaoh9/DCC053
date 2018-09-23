@@ -1,0 +1,122 @@
+----------------------
+{
+	int weight; int group; int charge; int distance;
+	distance = 2300;
+	weight = 4000;
+	if (60) group = 5;
+	else {
+		int test;
+		test = 2000;
+		group = 1500 / 15;
+		charge = 40 + 3 * 2300 / 1000;
+		test = 1;
+	}
+}
+
+----------------------
+program -> block
+block -> { decls stmts }
+decls -> decls decl
+decls -> decls decl
+decls -> decls decl
+decls -> decls decl
+decls -> 
+
+decl -> type id;
+type -> int
+
+decl -> type id;
+type -> int
+
+decl -> type id;
+type -> int
+
+decl -> type id;
+type -> int
+
+stmts -> stmts stmt
+stmts -> stmts stmt
+stmts -> stmts stmt
+stmts -> 
+
+stmt -> id = expr;
+expr -> term
+term -> unary
+unary -> factor
+factor -> num
+
+stmt -> id = expr;
+expr -> term
+term -> unary
+unary -> factor
+factor -> num
+
+stmt -> if ( rel ) stmt else stmt
+rel -> expr
+expr -> term
+term -> unary
+unary -> factor
+factor -> num
+
+stmt -> id = expr;
+expr -> term
+term -> unary
+unary -> factor
+factor -> num
+
+stmt -> block
+block -> { decls stmts }
+decls -> decls decl
+decls -> 
+
+decl -> type id;
+type -> int
+
+stmts -> stmts stmt
+stmts -> stmts stmt
+stmts -> stmts stmt
+stmts -> stmts stmt
+stmts -> 
+
+stmt -> id = expr;
+expr -> term
+term -> unary
+unary -> factor
+factor -> num
+
+stmt -> id = expr;
+expr -> term
+term -> term / unary
+term -> unary
+unary -> factor
+factor -> num
+
+unary -> factor
+factor -> num
+
+stmt -> id = expr;
+expr -> expr + term
+expr -> term
+term -> unary
+unary -> factor
+factor -> num
+
+term -> term / unary
+term -> term * unary
+term -> unary
+unary -> factor
+factor -> num
+
+unary -> factor
+factor -> num
+
+unary -> factor
+factor -> num
+
+stmt -> id = expr;
+expr -> term
+term -> unary
+unary -> factor
+factor -> num
+
+Program accepted.

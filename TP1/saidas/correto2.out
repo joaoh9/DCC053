@@ -1,0 +1,42 @@
+----------------------
+{
+	int abc;
+	if (1)
+	{
+		abc = 10;
+	}
+}
+
+----------------------
+program -> block
+block -> { decls stmts }
+decls -> decls decl
+decls -> 
+
+decl -> type id;
+type -> int
+
+stmts -> stmts stmt
+stmts -> 
+
+stmt -> if ( rel ) stmt
+rel -> expr
+expr -> term
+term -> unary
+unary -> factor
+factor -> num
+
+stmt -> block
+block -> { decls stmts }
+decls -> 
+
+stmts -> stmts stmt
+stmts -> 
+
+stmt -> id = expr;
+expr -> term
+term -> unary
+unary -> factor
+factor -> num
+
+Program accepted.
