@@ -1,0 +1,19 @@
+-------------------CODIGO DO USUARIO-------------------
+{
+	int a; int b; float x; float y; float[100] vetor;
+	while( True 
+	Exception in thread "main" java.lang.Error: near line3: True undeclared
+	at parser.Parser.error(Parser.java:24)
+	at parser.Parser.factor(Parser.java:308)
+	at parser.Parser.unary(Parser.java:269)
+	at parser.Parser.term(Parser.java:249)
+	at parser.Parser.expr(Parser.java:237)
+	at parser.Parser.rel(Parser.java:220)
+	at parser.Parser.equality(Parser.java:208)
+	at parser.Parser.join(Parser.java:196)
+	at parser.Parser.bool(Parser.java:184)
+	at parser.Parser.stmt(Parser.java:126)
+	at parser.Parser.stmts(Parser.java:92)
+	at parser.Parser.block(Parser.java:48)
+	at parser.Parser.program(Parser.java:35)
+	at main.Main.main(Main.java:11)

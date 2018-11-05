@@ -1,0 +1,9 @@
+{
+	int a; int b; float x; float y; float[100] vetor;
+	while( true ) {
+		do a = a+1; while( vetor[a] < x);
+		do b = b-1; while( vetor[b] > x);
+		if( a >= b) break;
+		y = vetor[a]; vetor[a] = vetor[b]; vetora[b] = y;
+	}
+}

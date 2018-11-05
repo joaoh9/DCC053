@@ -1,0 +1,31 @@
+-------------------CODIGO DO USUARIO-------------------
+{
+	int a; int b; float x; float y; float[100] vetor;
+	while( true ) {
+		do a = a+1; while( vetor[a] < x);
+		do b = b-1; while( vetor[b] > x);
+		if( a >= b) break;
+		y = vetor[a]; vetor[a] = vetor[b]; vetor[b] = y;
+	}
+}
+--------------------FIM CODIGO--------------------
+L1:L3:	a = a + 1
+	t1 = a * 8
+	t2 = vetor [ t1 ] 
+	if t2 < x goto L3
+L4:	b = b - 1
+	t3 = b * 8
+	t4 = vetor [ t3 ] 
+	if t4 > x goto L4
+L6:	iffalse a >= b goto L8
+L9:	goto L2
+L8:	t5 = a * 8
+	y = vetor [ t5 ] 
+L10:	t6 = a * 8
+	t7 = b * 8
+	t8 = vetor [ t7 ] 
+	vetor [ t6 ] = t8
+L11:	t9 = b * 8
+	vetor [ t9 ] = y
+	goto L1
+L2:

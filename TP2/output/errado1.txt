@@ -1,0 +1,25 @@
+-------------------CODIGO DO USUARIO-------------------
+{
+	int a; int b; float x; float y; float[100] vetor;
+	while( true ) {
+		do a = a+1; while( vetor[a] < x);
+		do b = b-1; while( vetor[b] > x);
+		if( a >= b) break;
+		y = vetor[a]; vetor[a] = vetor[b]; vetora[
+		Exception in thread "main" java.lang.Error: near line7: vetora undeclared
+	at parser.Parser.error(Parser.java:24)
+	at parser.Parser.assign(Parser.java:168)
+	at parser.Parser.stmt(Parser.java:157)
+	at parser.Parser.stmts(Parser.java:92)
+	at parser.Parser.stmts(Parser.java:92)
+	at parser.Parser.stmts(Parser.java:92)
+	at parser.Parser.stmts(Parser.java:92)
+	at parser.Parser.stmts(Parser.java:92)
+	at parser.Parser.stmts(Parser.java:92)
+	at parser.Parser.block(Parser.java:48)
+	at parser.Parser.stmt(Parser.java:154)
+	at parser.Parser.stmt(Parser.java:128)
+	at parser.Parser.stmts(Parser.java:92)
+	at parser.Parser.block(Parser.java:48)
+	at parser.Parser.program(Parser.java:35)
+	at main.Main.main(Main.java:11)

@@ -1,0 +1,24 @@
+-------------------CODIGO DO USUARIO-------------------
+{
+	float [4] numeros;
+	float temp;
+	int tamanho;
+	int j;
+	int i;
+
+	numeros[0] = 10;
+	numeros[1] = -3.9;
+	numeros[2] = 2592;
+	numeros[3] = 0,
+	Exception in thread "main" java.lang.Error: near line11: syntax error
+	at parser.Parser.error(Parser.java:24)
+	at parser.Parser.match(Parser.java:31)
+	at parser.Parser.assign(Parser.java:179)
+	at parser.Parser.stmt(Parser.java:157)
+	at parser.Parser.stmts(Parser.java:92)
+	at parser.Parser.stmts(Parser.java:92)
+	at parser.Parser.stmts(Parser.java:92)
+	at parser.Parser.stmts(Parser.java:92)
+	at parser.Parser.block(Parser.java:48)
+	at parser.Parser.program(Parser.java:35)
+	at main.Main.main(Main.java:11)

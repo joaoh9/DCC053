@@ -1,0 +1,12 @@
+-------------------CODIGO DO USUARIO-------------------
+{
+	int a; int b; float x; float y; float[100)
+	Exception in thread "main" java.lang.Error: near line2: syntax error
+	at parser.Parser.error(Parser.java:24)
+	at parser.Parser.match(Parser.java:31)
+	at parser.Parser.dims(Parser.java:80)
+	at parser.Parser.type(Parser.java:73)
+	at parser.Parser.decls(Parser.java:56)
+	at parser.Parser.block(Parser.java:47)
+	at parser.Parser.program(Parser.java:35)
+	at main.Main.main(Main.java:11)

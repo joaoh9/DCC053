@@ -1,0 +1,16 @@
+{
+	int n; int u; int resultado; int i; int t;
+
+	n = 5;
+	u = 0;
+	resultado = 1;
+
+	i = 2;
+	while (i <= n) {
+		t = u + resultado;
+		u = resultado;
+		resultado = t;
+
+		i = i + 1;
+	}
+}

@@ -1,0 +1,29 @@
+-------------------CODIGO DO USUARIO-------------------
+{
+	int n; int u; int resultado; int i; int t;
+
+	n = 5;
+	u = 0;
+	resultado = 1;
+
+	i = 2;
+	while (i <= n) {
+		t = u + resultado;
+		u = resultado;
+		resultado = t;
+
+		i = i + 1;
+	}
+}
+--------------------FIM CODIGO--------------------
+L1:	n = 5
+L3:	u = 0
+L4:	resultado = 1
+L5:	i = 2
+L6:	iffalse i <= n goto L2
+L7:	t = u + resultado
+L8:	u = resultado
+L9:	resultado = t
+L10:	i = i + 1
+	goto L6
+L2:
